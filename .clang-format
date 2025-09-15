@@ -4,6 +4,7 @@ BasedOnStyle: LLVM
 BreakBeforeBraces: Custom
 AllowShortBlocksOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: false
 BraceWrapping:
   AfterCaseLabel: true
   AfterClass: true

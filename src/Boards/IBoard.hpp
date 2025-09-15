@@ -6,10 +6,12 @@ class IFigure;
 
 struct IBoard
 {
-    virtual IFigure* getFigure() = 0;
-    virtual void setFigure() = 0;
-    virtual void removeFigure() = 0;
+    virtual IFigure* getFigure(position_t position) = 0;
+    virtual void setFigure(position_t position, IFigure* figure) = 0;
+    virtual void removeFigure(position_t position) = 0;
+
+    virtual bool isPossibleSet(position_t position, IFigure* figure) = 0;
 
     virtual BoardState getBoardState() = 0;
-    virtual BoardState setBoardState() = 0;
+    virtual void setBoardState() = 0;
 };

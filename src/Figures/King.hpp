@@ -9,11 +9,19 @@ class King : public IFigure
     color_t color_m;
 
   public:
-    King(color_t color) : color_m(color) {}
+    King(color_t color) : color_m(color)
+    {}
 
-    color_t getColor() { return color_m; }
+    color_t getColor() override
+    {
+        return color_m;
+    }
+    void setColor(color_t color) override
+    {
+        color_m = color;
+    }
 
-    bool isPossibleMove(const Move& move)
+    bool isPossibleMove(const Move& move) override
     {
         position_t offset = move.to - move.from;
 
@@ -22,5 +30,10 @@ class King : public IFigure
         if (abs(offset.x) > 1 and abs(offset.y) > 1) { return false; }
 
         return true;
+    }
+
+    string_t getType() override
+    {
+        return "king";
     }
 };

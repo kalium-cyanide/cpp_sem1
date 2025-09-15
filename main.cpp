@@ -40,14 +40,8 @@ int main(int argc, char** argv)
             auto states = static_cast<UI_Info*>(p);
             states->slider_value = dynamic_cast<Fl_Valuator*>(w)->value();
 
-            if (states->is_horizantal)
-            {
-                states->window_p->size(states->w * (states->slider_value + 1), states->h);
-            }
-            else
-            {
-                states->window_p->size(states->w, states->h * (states->slider_value + 1));
-            }
+            if (states->is_horizantal) { states->window_p->size(states->w * (states->slider_value + 1), states->h); }
+            else { states->window_p->size(states->w, states->h * (states->slider_value + 1)); }
         },
         &*ui_info);
     //
