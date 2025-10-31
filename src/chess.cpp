@@ -1,82 +1,73 @@
-#include "Board.hpp"
-#include "Boards/ClassicBoard.hpp"
-#include "Boards/IBoard.hpp"
-#include "Figure.hpp"
-#include "Figures/Bishop.hpp"
-#include "Figures/IFigure.hpp"
-#include "Figures/Knight.hpp"
-#include "Figures/Queen.hpp"
-#include <iostream>
-#include <string>
-#include <vector>
-#include <windows.h>
+// #include "GameCores/ClassicChessCore.hpp"
 
-#include "PossibleMovesGenerator.hpp"
+// int main()
+// {
+//     ClassicChessCore game;
+//     game.startGame();
+//     return 0;
+// }
+// chess.cpp
+// chess.cpp
 
-enum colors
-{
-    WHITE = 0,
-    BLACK = 1
-};
+#include "backend/Boards/ClassicBoard.hpp"
+#include "backend/DataFabric.hpp"
+#include "backend/Figures/Bishop.hpp"
+#include "backend/Figures/IFigure.hpp"
+#include "backend/GameCores/ClassicChessCore.hpp"
+#include "backend/Move.hpp"
+#include "backend/Players/GUIPlayer.hpp"
+#include "frontend/FltkFrontend.hpp"
 
-wchar_t to_wchar(IFigure* figure)
+ChessBoardWidget *g_board_widget = nullptr;
+IGameCore *g_game_core = nullptr;
+
+void game_thread_func()
 {
-    if (figure == nullptr) { return L'.'; }
-    if (dynamic_cast<Pawn*>(figure) != nullptr) { return figure->getColor() == WHITE ? L'\u2659' : L'\u265F'; }
-    if (dynamic_cast<King*>(figure) != nullptr) { return figure->getColor() == WHITE ? L'\u2654' : L'\u265A'; }
-    if (dynamic_cast<Knight*>(figure) != nullptr) { return figure->getColor() == WHITE ? L'\u2658' : L'\u265E'; }
-    if (dynamic_cast<Bishop*>(figure) != nullptr) { return figure->getColor() == WHITE ? L'\u2657' : L'\u265D'; }
-    if (dynamic_cast<Queen*>(figure) != nullptr) { return figure->getColor() == WHITE ? L'\u2655' : L'\u265B'; }
-    if (dynamic_cast<Rook*>(figure) != nullptr) { return figure->getColor() == WHITE ? L'\u2656' : L'\u265C'; }
-    return L'?';  // на случай, если тип фигуры неизвестен
-}
-void drawClassicBoard(ClassicBoard& board_a)
-{
-    for (auto i = 1; i <= 8; i++)
+    if (g_game_core)
     {
-        for (auto j = 1; j <= 8; j++)
-            std::wcout << to_wchar(board_a.getFigure(position_t(i, j)));  // board_a.getFigure((i,j))
-        std::wcout << '\n';
+        g_game_core->startGame();
     }
 }
 
-void setFigures(IBoard& board_a)
+int main()
 {
-    for (int row = 1; row <= 8; row++)
+    auto *board = new ClassicBoard();
+    auto arr = array_t<IFigure *>{new Bishop(0)};
+    auto a = DataFabric::createPossibleMoveTable(board, arr);
+
+    for (auto i : *a)
     {
-        for (int col = 1; col <= 8; col++)
+        std::cout << i.first << std::endl;
+        for (auto j : i.second)
         {
-            board_a.setFigure(position_t(row, col), nullptr);
+            std::cout << '\t' << j << '\n';
         }
     }
 
-    for (int i = 1; i < 9; i++)
-    {
-        board_a.setFigure(position_t(2, i), new Pawn(WHITE));
-        board_a.setFigure(position_t(7, i), new Pawn(BLACK));
-    }
+    Fl::lock();
 
-    for (auto color : {0, 1})
-    {
-        board_a.setFigure(position_t(1 + color * 7, 1), new Rook(color));
-        board_a.setFigure(position_t(1 + color * 7, 2), new Knight(color));
-        board_a.setFigure(position_t(1 + color * 7, 3), new Bishop(color));
-        board_a.setFigure(position_t(1 + color * 7, 4), new Queen(color));
-        board_a.setFigure(position_t(1 + color * 7, 5), new King(color));
-        board_a.setFigure(position_t(1 + color * 7, 6), new Bishop(color));
-        board_a.setFigure(position_t(1 + color * 7, 7), new Knight(color));
-        board_a.setFigure(position_t(1 + color * 7, 8), new Rook(color));
-    }
-}
+    const int window_size = 720;
+    auto *window = new Fl_Double_Window(window_size, window_size, "Chess");
 
-int main(int argc, char** argv)
-{
-    ClassicBoard board;
-    setlocale(LC_ALL, "en_US.utf8");
-    SetConsoleOutputCP(CP_UTF8);
+    auto *game = new ClassicChessCore();
+    g_game_core = game;
 
-    setFigures(board);
-    drawClassicBoard(board);
+    auto *player_white = new GuiHumanPlayer(0, "White Player");
+    auto *player_black = new GuiHumanPlayer(1, "Black Player");
 
-    return 0;
+    game->setPlayers(player_white, player_black);
+
+    g_board_widget = new ChessBoardWidget(0, 0, window_size, window_size, game->getBoard());
+
+    array_t<IPlayer *> human_players = {player_white, player_black};
+    g_board_widget->setHumanPlayers(human_players);
+
+    window->end();
+    window->resizable(g_board_widget);
+    window->show();
+
+    std::thread game_thread(game_thread_func);
+    game_thread.detach();
+
+    return Fl::run();
 }
