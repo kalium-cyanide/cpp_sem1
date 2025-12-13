@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 add_library(backend
         Boards/BoardState.hpp
         Boards/ClassicBoard.hpp
-        Boards/iBoard.hpp
+        Boards/IBoard.hpp
 
         Figures/Bishop.hpp
         Figures/IFigure.hpp
@@ -15,7 +15,7 @@ add_library(backend
 
         GameCores/ClassicChessCore.cpp
         GameCores/ClassicChessCore.hpp
-        GameCores/iGameCore.hpp
+        GameCores/IGameCore.hpp
 
         Players/GUIPlayer.hpp
         Players/HumanPlayer.hpp

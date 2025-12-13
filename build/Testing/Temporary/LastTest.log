@@ -1,0 +1,59 @@
+Start testing: Dec 13 03:18 MSK
+----------------------------------------------------------
+1/1 Testing: unit_tests
+1/1 Test: unit_tests
+Command: "/home/artem/cpp_sem1/build/tests/unit_tests"
+Directory: /home/artem/cpp_sem1/build/tests
+"unit_tests" start time: Dec 13 03:18 MSK
+Output:
+----------------------------------------------------------
+Running main() from /home/artem/cpp_sem1/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 7 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from King
+[ RUN      ] King.NormalMove
+[       OK ] King.NormalMove (0 ms)
+[----------] 1 test from King (0 ms total)
+
+[----------] 1 test from Queen
+[ RUN      ] Queen.Move
+[       OK ] Queen.Move (0 ms)
+[----------] 1 test from Queen (0 ms total)
+
+[----------] 1 test from Rook
+[ RUN      ] Rook.Move
+[       OK ] Rook.Move (0 ms)
+[----------] 1 test from Rook (0 ms total)
+
+[----------] 1 test from Bishop
+[ RUN      ] Bishop.Move
+[       OK ] Bishop.Move (0 ms)
+[----------] 1 test from Bishop (0 ms total)
+
+[----------] 1 test from Knight
+[ RUN      ] Knight.Move
+[       OK ] Knight.Move (0 ms)
+[----------] 1 test from Knight (0 ms total)
+
+[----------] 1 test from Pawn
+[ RUN      ] Pawn.Move
+[       OK ] Pawn.Move (0 ms)
+[----------] 1 test from Pawn (0 ms total)
+
+[----------] 1 test from PgnParser
+[ RUN      ] PgnParser.ReadFile
+[       OK ] PgnParser.ReadFile (0 ms)
+[----------] 1 test from PgnParser (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 7 test suites ran. (0 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"unit_tests" end time: Dec 13 03:18 MSK
+"unit_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 13 03:18 MSK

@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread -Wl,--dependency-file=CMakeFiles/fltk-options.dir/link.d "CMakeFiles/fltk-options.dir/fltk-options.cxx.o" -o ../bin/fltk-options   -L/home/artem/cpp_sem1/build/_deps/fltk-build/src/../lib  -Wl,-rpath,/home/artem/cpp_sem1/build/_deps/fltk-build/src/../lib: ../lib/libfltk.a /usr/lib64/libdl.a /usr/lib64/libX11.so

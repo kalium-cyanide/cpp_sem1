@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgraph_lib.a CMakeFiles/graph_lib.dir/Graph.cpp.o CMakeFiles/graph_lib.dir/GUI.cpp.o CMakeFiles/graph_lib.dir/Window.cpp.o CMakeFiles/graph_lib.dir/ext/graph.cpp.o
+/usr/bin/ranlib libgraph_lib.a

@@ -27,9 +27,7 @@ class King : public IFigure
 
         if (offset == position_t(0, 0)) { return false; }
 
-        if (abs(offset.x) > 1 and abs(offset.y) > 1) { return false; }
-
-        return true;
+        return (abs(offset.x) <= 1 && abs(offset.y) <= 1);
     }
 
     string_t getType() override

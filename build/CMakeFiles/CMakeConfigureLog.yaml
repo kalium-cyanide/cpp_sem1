@@ -1,0 +1,1854 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 6.17.9-200.fc42.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/artem/cpp_sem1/build/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/artem/cpp_sem1/build/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1688c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1688c.dir/build.make CMakeFiles/cmTC_1688c.dir/build
+        gmake[1]: Entering directory '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2'
+        Building C object CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1688c.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1688c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccSMdil1.s
+        GNU C23 (GCC) version 15.2.1 20251111 (Red Hat 15.2.1-4) (x86_64-redhat-linux)
+        	compiled by GNU C version 15.2.1 20251111 (Red Hat 15.2.1-4), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/15/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: cb5b2100d753cda12335fdede84b8cff
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1688c.dir/'
+         as -v --64 -o CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o /tmp/ccSMdil1.s
+        GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-12.fc42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_1688c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1688c.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1688c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_1688c.'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPFUAYz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_1688c /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        collect2 version 15.2.1 20251111 (Red Hat 15.2.1-4)
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPFUAYz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_1688c /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        GNU ld version 2.44-12.fc42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1688c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_1688c.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -o cmTC_1688c
+        gmake[1]: Leaving directory '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/15/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1688c/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_1688c.dir/build.make CMakeFiles/cmTC_1688c.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TX1rt2']
+        ignore line: [Building C object CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1688c.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_1688c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccSMdil1.s]
+        ignore line: [GNU C23 (GCC) version 15.2.1 20251111 (Red Hat 15.2.1-4) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 15.2.1 20251111 (Red Hat 15.2.1-4)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: cb5b2100d753cda12335fdede84b8cff]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1688c.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o /tmp/ccSMdil1.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-12.fc42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_1688c]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1688c.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_1688c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_1688c.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPFUAYz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_1688c /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccPFUAYz.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_1688c] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 15.2.1 20251111 (Red Hat 15.2.1-4)]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccPFUAYz.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_1688c /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_1688c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15] ==> [/usr/lib/gcc/x86_64-redhat-linux/15]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/15;/usr/lib64;/lib64;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.44-12.fc42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_204e7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_204e7.dir/build.make CMakeFiles/cmTC_204e7.dir/build
+        gmake[1]: Entering directory '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An'
+        Building CXX object CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_204e7.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_204e7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc1Jeg9N.s
+        GNU C++17 (GCC) version 15.2.1 20251111 (Red Hat 15.2.1-4) (x86_64-redhat-linux)
+        	compiled by GNU C version 15.2.1 20251111 (Red Hat 15.2.1-4), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15
+         /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux
+         /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward
+         /usr/lib/gcc/x86_64-redhat-linux/15/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 44d1dd55fc102fce72af17272c8985e4
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_204e7.dir/'
+         as -v --64 -o CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1Jeg9N.s
+        GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-12.fc42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_204e7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_204e7.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,objc,obj-c++,ada,go,d,m2,cobol,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none,amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_204e7' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_204e7.'
+         /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvU6Gcp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_204e7 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        collect2 version 15.2.1 20251111 (Red Hat 15.2.1-4)
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvU6Gcp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_204e7 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o
+        GNU ld version 2.44-12.fc42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_204e7' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_204e7.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_204e7
+        gmake[1]: Leaving directory '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15] ==> [/usr/include/c++/15]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux] ==> [/usr/include/c++/15/x86_64-redhat-linux]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward] ==> [/usr/include/c++/15/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/15/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/15/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/15;/usr/include/c++/15/x86_64-redhat-linux;/usr/include/c++/15/backward;/usr/lib/gcc/x86_64-redhat-linux/15/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_204e7/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_204e7.dir/build.make CMakeFiles/cmTC_204e7.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-yiB6An']
+        ignore line: [Building CXX object CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_204e7.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_204e7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cc1Jeg9N.s]
+        ignore line: [GNU C++17 (GCC) version 15.2.1 20251111 (Red Hat 15.2.1-4) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 15.2.1 20251111 (Red Hat 15.2.1-4)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/15/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/x86_64-redhat-linux]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/../../../../include/c++/15/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/15/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 44d1dd55fc102fce72af17272c8985e4]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_204e7.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o /tmp/cc1Jeg9N.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-redhat-linux) using BFD version version 2.44-12.fc42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_204e7]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_204e7.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran objc obj-c++ ada go d m2 cobol lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-libstdcxx-backtrace --with-libstdcxx-zoneinfo=/usr/share/zoneinfo --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-15.2.1-build/gcc-15.2.1-20251111/obj-x86_64-redhat-linux/isl-install --enable-offload-targets=nvptx-none amdgcn-amdhsa --enable-offload-defaulted --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=i686 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.2.1 20251111 (Red Hat 15.2.1-4) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/15/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/15/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/15/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_204e7' '-foffload-options=-l_GCC_stdc++' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_204e7.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/15/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvU6Gcp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_204e7 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccvU6Gcp.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_204e7] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        ignore line: [collect2 version 15.2.1 20251111 (Red Hat 15.2.1-4)]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-redhat-linux/15/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/15/lto-wrapper -plugin-opt=-fresolution=/tmp/ccvU6Gcp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_204e7 /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/15 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/15/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_204e7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/15/crtend.o /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15] ==> [/usr/lib/gcc/x86_64-redhat-linux/15]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/15/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/15/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/15;/usr/lib64;/lib64;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld version 2.44-12.fc42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckLibraryExists.cmake:78 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:693 (check_library_exists)"
+      - "/usr/share/cmake/Modules/FindFLTK.cmake:102 (include)"
+      - "lib/graph_lib/CMakeLists.txt:4 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib64/libX11.so"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-YM1sNv"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-YM1sNv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-YM1sNv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4e9bb/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4e9bb.dir/build.make CMakeFiles/cmTC_4e9bb.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-YM1sNv»
+        Building C object CMakeFiles/cmTC_4e9bb.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_4e9bb.dir/CheckFunctionExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-YM1sNv/CheckFunctionExists.c
+        Linking C executable cmTC_4e9bb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4e9bb.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_4e9bb.dir/CheckFunctionExists.c.o -o cmTC_4e9bb  /usr/lib64/libX11.so
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-YM1sNv»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:708 (check_function_exists)"
+      - "/usr/share/cmake/Modules/FindFLTK.cmake:102 (include)"
+      - "lib/graph_lib/CMakeLists.txt:4 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NrVUTn"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NrVUTn"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NrVUTn'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_cff99/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_cff99.dir/build.make CMakeFiles/cmTC_cff99.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NrVUTn»
+        Building C object CMakeFiles/cmTC_cff99.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_cff99.dir/CheckFunctionExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NrVUTn/CheckFunctionExists.c
+        Linking C executable cmTC_cff99
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cff99.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_cff99.dir/CheckFunctionExists.c.o -o cmTC_cff99
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NrVUTn»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:722 (check_function_exists)"
+      - "/usr/share/cmake/Modules/FindFLTK.cmake:102 (include)"
+      - "lib/graph_lib/CMakeLists.txt:4 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-a8TnBm"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-a8TnBm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-a8TnBm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c38ae/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c38ae.dir/build.make CMakeFiles/cmTC_c38ae.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-a8TnBm»
+        Building C object CMakeFiles/cmTC_c38ae.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_c38ae.dir/CheckFunctionExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-a8TnBm/CheckFunctionExists.c
+        Linking C executable cmTC_c38ae
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c38ae.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_c38ae.dir/CheckFunctionExists.c.o -o cmTC_c38ae
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-a8TnBm»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:731 (check_function_exists)"
+      - "/usr/share/cmake/Modules/FindFLTK.cmake:102 (include)"
+      - "lib/graph_lib/CMakeLists.txt:4 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-bD9oTv"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-bD9oTv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-bD9oTv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_75112/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_75112.dir/build.make CMakeFiles/cmTC_75112.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-bD9oTv»
+        Building C object CMakeFiles/cmTC_75112.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_75112.dir/CheckFunctionExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-bD9oTv/CheckFunctionExists.c
+        Linking C executable cmTC_75112
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75112.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_75112.dir/CheckFunctionExists.c.o -o cmTC_75112
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-bD9oTv»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "/usr/share/cmake/Modules/FindX11.cmake:740 (check_function_exists)"
+      - "/usr/share/cmake/Modules/FindFLTK.cmake:102 (include)"
+      - "lib/graph_lib/CMakeLists.txt:4 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mc7ovQ"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mc7ovQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mc7ovQ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_207b6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_207b6.dir/build.make CMakeFiles/cmTC_207b6.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mc7ovQ»
+        Building C object CMakeFiles/cmTC_207b6.dir/CheckFunctionExists.c.o
+        /usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_207b6.dir/CheckFunctionExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mc7ovQ/CheckFunctionExists.c
+        Linking C executable cmTC_207b6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_207b6.dir/link.txt --verbose=1
+        /usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_207b6.dir/CheckFunctionExists.c.o -o cmTC_207b6
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mc7ovQ»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:262 (check_include_file)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-cKuZui"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-cKuZui"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-cKuZui'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9344f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9344f.dir/build.make CMakeFiles/cmTC_9344f.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-cKuZui»
+        Building C object CMakeFiles/cmTC_9344f.dir/CheckIncludeFile.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_9344f.dir/CheckIncludeFile.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-cKuZui/CheckIncludeFile.c
+        Linking C executable cmTC_9344f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9344f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_9344f.dir/CheckIncludeFile.c.o -o cmTC_9344f
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-cKuZui»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:263 (check_include_file)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4sGZJI"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4sGZJI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4sGZJI'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a70d2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a70d2.dir/build.make CMakeFiles/cmTC_a70d2.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4sGZJI»
+        Building C object CMakeFiles/cmTC_a70d2.dir/CheckIncludeFile.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_a70d2.dir/CheckIncludeFile.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4sGZJI/CheckIncludeFile.c
+        Linking C executable cmTC_a70d2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a70d2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_a70d2.dir/CheckIncludeFile.c.o -o cmTC_a70d2
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4sGZJI»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:264 (check_include_file)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-EiCr4K"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-EiCr4K"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-EiCr4K'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d6d6c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d6d6c.dir/build.make CMakeFiles/cmTC_d6d6c.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-EiCr4K»
+        Building C object CMakeFiles/cmTC_d6d6c.dir/CheckIncludeFile.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_d6d6c.dir/CheckIncludeFile.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-EiCr4K/CheckIncludeFile.c
+        Linking C executable cmTC_d6d6c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6d6c.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_d6d6c.dir/CheckIncludeFile.c.o -o cmTC_d6d6c
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-EiCr4K»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:181 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of short"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PvVhve"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PvVhve"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_SHORT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PvVhve'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_16731/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_16731.dir/build.make CMakeFiles/cmTC_16731.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PvVhve»
+        Building C object CMakeFiles/cmTC_16731.dir/SIZEOF_SHORT.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_16731.dir/SIZEOF_SHORT.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PvVhve/SIZEOF_SHORT.c
+        Linking C executable cmTC_16731
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16731.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_16731.dir/SIZEOF_SHORT.c.o -o cmTC_16731
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PvVhve»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:182 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-64oFsG"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-64oFsG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-64oFsG'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_970c2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_970c2.dir/build.make CMakeFiles/cmTC_970c2.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-64oFsG»
+        Building C object CMakeFiles/cmTC_970c2.dir/SIZEOF_INT.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_970c2.dir/SIZEOF_INT.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-64oFsG/SIZEOF_INT.c
+        Linking C executable cmTC_970c2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_970c2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_970c2.dir/SIZEOF_INT.c.o -o cmTC_970c2
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-64oFsG»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:183 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9Yd8Q2"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9Yd8Q2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9Yd8Q2'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_aa2e3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_aa2e3.dir/build.make CMakeFiles/cmTC_aa2e3.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9Yd8Q2»
+        Building C object CMakeFiles/cmTC_aa2e3.dir/SIZEOF_LONG.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_aa2e3.dir/SIZEOF_LONG.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9Yd8Q2/SIZEOF_LONG.c
+        Linking C executable cmTC_aa2e3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa2e3.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_aa2e3.dir/SIZEOF_LONG.c.o -o cmTC_aa2e3
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9Yd8Q2»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "build/_deps/fltk-src/CMake/setup.cmake:184 (CHECK_TYPE_SIZE)"
+      - "build/_deps/fltk-src/CMakeLists.txt:68 (include)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4bLuxZ"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4bLuxZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_HAVE_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4bLuxZ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b1c49/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b1c49.dir/build.make CMakeFiles/cmTC_b1c49.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4bLuxZ»
+        Building C object CMakeFiles/cmTC_b1c49.dir/HAVE_LONG_LONG.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_b1c49.dir/HAVE_LONG_LONG.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4bLuxZ/HAVE_LONG_LONG.c
+        Linking C executable cmTC_b1c49
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b1c49.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_b1c49.dir/HAVE_LONG_LONG.c.o -o cmTC_b1c49
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-4bLuxZ»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:127 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_ALSA_ASOUNDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_11cb7/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_11cb7.dir/build.make CMakeFiles/cmTC_11cb7.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS»
+        Building C object CMakeFiles/cmTC_11cb7.dir/HAVE_ALSA_ASOUNDLIB_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_11cb7.dir/HAVE_ALSA_ASOUNDLIB_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS/HAVE_ALSA_ASOUNDLIB_H.c
+        /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS/HAVE_ALSA_ASOUNDLIB_H.c:2:10: фатальная ошибка: alsa/asoundlib.h: Нет такого файла или каталога
+            2 | #include <alsa/asoundlib.h>
+              |          ^~~~~~~~~~~~~~~~~~
+        компиляция прервана.
+        gmake[1]: *** [CMakeFiles/cmTC_11cb7.dir/build.make:81: CMakeFiles/cmTC_11cb7.dir/HAVE_ALSA_ASOUNDLIB_H.c.o] Ошибка 1
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-GT5CYS»
+        gmake: *** [Makefile:134: cmTC_11cb7/fast] Ошибка 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:128 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-qRWi1U"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-qRWi1U"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-qRWi1U'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8243c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8243c.dir/build.make CMakeFiles/cmTC_8243c.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-qRWi1U»
+        Building C object CMakeFiles/cmTC_8243c.dir/HAVE_DLFCN_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_8243c.dir/HAVE_DLFCN_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-qRWi1U/HAVE_DLFCN_H.c
+        Linking C executable cmTC_8243c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8243c.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_8243c.dir/HAVE_DLFCN_H.c.o -o cmTC_8243c
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-qRWi1U»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:129 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mlEGoH"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mlEGoH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_GL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mlEGoH'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bd1e4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bd1e4.dir/build.make CMakeFiles/cmTC_bd1e4.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mlEGoH»
+        Building C object CMakeFiles/cmTC_bd1e4.dir/HAVE_GL_GLU_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_bd1e4.dir/HAVE_GL_GLU_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mlEGoH/HAVE_GL_GLU_H.c
+        Linking C executable cmTC_bd1e4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd1e4.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_bd1e4.dir/HAVE_GL_GLU_H.c.o -o cmTC_bd1e4
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-mlEGoH»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:130 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-d05k7i"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-d05k7i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-d05k7i'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_02183/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_02183.dir/build.make CMakeFiles/cmTC_02183.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-d05k7i»
+        Building C object CMakeFiles/cmTC_02183.dir/HAVE_LOCALE_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_02183.dir/HAVE_LOCALE_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-d05k7i/HAVE_LOCALE_H.c
+        Linking C executable cmTC_02183
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_02183.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_02183.dir/HAVE_LOCALE_H.c.o -o cmTC_02183
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-d05k7i»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:131 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_OPENGL_GLU_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9691a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9691a.dir/build.make CMakeFiles/cmTC_9691a.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm»
+        Building C object CMakeFiles/cmTC_9691a.dir/HAVE_OPENGL_GLU_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_9691a.dir/HAVE_OPENGL_GLU_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm/HAVE_OPENGL_GLU_H.c
+        /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm/HAVE_OPENGL_GLU_H.c:2:10: фатальная ошибка: OpenGL/glu.h: Нет такого файла или каталога
+            2 | #include <OpenGL/glu.h>
+              |          ^~~~~~~~~~~~~~
+        компиляция прервана.
+        gmake[1]: *** [CMakeFiles/cmTC_9691a.dir/build.make:81: CMakeFiles/cmTC_9691a.dir/HAVE_OPENGL_GLU_H.c.o] Ошибка 1
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-M5osOm»
+        gmake: *** [Makefile:134: cmTC_9691a/fast] Ошибка 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:132 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PeZ6GP"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PeZ6GP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STDIO_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PeZ6GP'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c67da/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c67da.dir/build.make CMakeFiles/cmTC_c67da.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PeZ6GP»
+        Building C object CMakeFiles/cmTC_c67da.dir/HAVE_STDIO_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_c67da.dir/HAVE_STDIO_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PeZ6GP/HAVE_STDIO_H.c
+        Linking C executable cmTC_c67da
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c67da.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c67da.dir/HAVE_STDIO_H.c.o -o cmTC_c67da
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-PeZ6GP»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:133 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-nlnBdu"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-nlnBdu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-nlnBdu'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_5f6f9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_5f6f9.dir/build.make CMakeFiles/cmTC_5f6f9.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-nlnBdu»
+        Building C object CMakeFiles/cmTC_5f6f9.dir/HAVE_STRINGS_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_5f6f9.dir/HAVE_STRINGS_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-nlnBdu/HAVE_STRINGS_H.c
+        Linking C executable cmTC_5f6f9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f6f9.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_5f6f9.dir/HAVE_STRINGS_H.c.o -o cmTC_5f6f9
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-nlnBdu»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:134 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TUyIOw"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TUyIOw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SYS_SELECT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TUyIOw'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e7421/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e7421.dir/build.make CMakeFiles/cmTC_e7421.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TUyIOw»
+        Building C object CMakeFiles/cmTC_e7421.dir/HAVE_SYS_SELECT_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_e7421.dir/HAVE_SYS_SELECT_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TUyIOw/HAVE_SYS_SELECT_H.c
+        Linking C executable cmTC_e7421
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7421.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_e7421.dir/HAVE_SYS_SELECT_H.c.o -o cmTC_e7421
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TUyIOw»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:135 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SYS_STDTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ab6ae/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ab6ae.dir/build.make CMakeFiles/cmTC_ab6ae.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC»
+        Building C object CMakeFiles/cmTC_ab6ae.dir/HAVE_SYS_STDTYPES_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_ab6ae.dir/HAVE_SYS_STDTYPES_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC/HAVE_SYS_STDTYPES_H.c
+        /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC/HAVE_SYS_STDTYPES_H.c:2:10: фатальная ошибка: sys/stdtypes.h: Нет такого файла или каталога
+            2 | #include <sys/stdtypes.h>
+              |          ^~~~~~~~~~~~~~~~
+        компиляция прервана.
+        gmake[1]: *** [CMakeFiles/cmTC_ab6ae.dir/build.make:81: CMakeFiles/cmTC_ab6ae.dir/HAVE_SYS_STDTYPES_H.c.o] Ошибка 1
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ACC8mC»
+        gmake: *** [Makefile:134: cmTC_ab6ae/fast] Ошибка 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:137 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-fLZ9J7"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-fLZ9J7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_X11_XREGION_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-fLZ9J7'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_668ab/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_668ab.dir/build.make CMakeFiles/cmTC_668ab.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-fLZ9J7»
+        Building C object CMakeFiles/cmTC_668ab.dir/HAVE_X11_XREGION_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_668ab.dir/HAVE_X11_XREGION_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-fLZ9J7/HAVE_X11_XREGION_H.c
+        Linking C executable cmTC_668ab
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_668ab.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_668ab.dir/HAVE_X11_XREGION_H.c.o -o cmTC_668ab
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-fLZ9J7»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:143 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-HRWWJN"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-HRWWJN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-HRWWJN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dd332/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_dd332.dir/build.make CMakeFiles/cmTC_dd332.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-HRWWJN»
+        Building C object CMakeFiles/cmTC_dd332.dir/HAVE_PTHREAD_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_dd332.dir/HAVE_PTHREAD_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-HRWWJN/HAVE_PTHREAD_H.c
+        Linking C executable cmTC_dd332
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dd332.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_dd332.dir/HAVE_PTHREAD_H.c.o -o cmTC_dd332
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-HRWWJN»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/fltk-src/CMake/resources.cmake:149 (try_compile)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+      binary: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6c31f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6c31f.dir/build.make CMakeFiles/cmTC_6c31f.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        Building C object CMakeFiles/cmTC_6c31f.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_6c31f.dir/pthread_mutex_recursive.c.o -c /home/artem/cpp_sem1/build/_deps/fltk-src/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_6c31f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c31f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_6c31f.dir/pthread_mutex_recursive.c.o -o cmTC_6c31f
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:34 (check_include_files)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:190 (fl_find_header)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NCvPGI"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NCvPGI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_DIRENT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NCvPGI'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_75772/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_75772.dir/build.make CMakeFiles/cmTC_75772.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NCvPGI»
+        Building C object CMakeFiles/cmTC_75772.dir/HAVE_DIRENT_H.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_75772.dir/HAVE_DIRENT_H.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NCvPGI/HAVE_DIRENT_H.c
+        Linking C executable cmTC_75772
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75772.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_75772.dir/HAVE_DIRENT_H.c.o -o cmTC_75772
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NCvPGI»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:257 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ytlfXm"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ytlfXm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_DLSYM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ytlfXm'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ee800/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ee800.dir/build.make CMakeFiles/cmTC_ee800.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ytlfXm»
+        Building C object CMakeFiles/cmTC_ee800.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_ee800.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ytlfXm/CheckSymbolExists.c
+        Linking C executable cmTC_ee800
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ee800.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_ee800.dir/CheckSymbolExists.c.o -o cmTC_ee800  -ldl
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-ytlfXm»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:260 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TqvNuw"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TqvNuw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_LOCALECONV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TqvNuw'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_73487/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_73487.dir/build.make CMakeFiles/cmTC_73487.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TqvNuw»
+        Building C object CMakeFiles/cmTC_73487.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_73487.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TqvNuw/CheckSymbolExists.c
+        Linking C executable cmTC_73487
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73487.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_73487.dir/CheckSymbolExists.c.o -o cmTC_73487
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-TqvNuw»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:269 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9gzRbz"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9gzRbz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SCANDIR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9gzRbz'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_79a9f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_79a9f.dir/build.make CMakeFiles/cmTC_79a9f.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9gzRbz»
+        Building C object CMakeFiles/cmTC_79a9f.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_79a9f.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9gzRbz/CheckSymbolExists.c
+        Linking C executable cmTC_79a9f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79a9f.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_79a9f.dir/CheckSymbolExists.c.o -o cmTC_79a9f
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-9gzRbz»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:270 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-sBHCcy"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-sBHCcy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-sBHCcy'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c2044/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c2044.dir/build.make CMakeFiles/cmTC_c2044.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-sBHCcy»
+        Building C object CMakeFiles/cmTC_c2044.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_c2044.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-sBHCcy/CheckSymbolExists.c
+        Linking C executable cmTC_c2044
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2044.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c2044.dir/CheckSymbolExists.c.o -o cmTC_c2044
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-sBHCcy»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:277 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-b10OrD"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-b10OrD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-b10OrD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ebcb3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ebcb3.dir/build.make CMakeFiles/cmTC_ebcb3.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-b10OrD»
+        Building C object CMakeFiles/cmTC_ebcb3.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_ebcb3.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-b10OrD/CheckSymbolExists.c
+        Linking C executable cmTC_ebcb3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebcb3.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_ebcb3.dir/CheckSymbolExists.c.o -o cmTC_ebcb3
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-b10OrD»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:279 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-aNzoFP"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-aNzoFP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STRLCAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-aNzoFP'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b28b9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b28b9.dir/build.make CMakeFiles/cmTC_b28b9.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-aNzoFP»
+        Building C object CMakeFiles/cmTC_b28b9.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_b28b9.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-aNzoFP/CheckSymbolExists.c
+        Linking C executable cmTC_b28b9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b28b9.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_b28b9.dir/CheckSymbolExists.c.o -o cmTC_b28b9
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-aNzoFP»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:280 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-gthWGi"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-gthWGi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_STRLCPY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-gthWGi'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4b3e0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4b3e0.dir/build.make CMakeFiles/cmTC_4b3e0.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-gthWGi»
+        Building C object CMakeFiles/cmTC_4b3e0.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_4b3e0.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-gthWGi/CheckSymbolExists.c
+        Linking C executable cmTC_4b3e0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b3e0.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_4b3e0.dir/CheckSymbolExists.c.o -o cmTC_4b3e0
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-gthWGi»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:281 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-FO5BJJ"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-FO5BJJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-FO5BJJ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0cc8a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0cc8a.dir/build.make CMakeFiles/cmTC_0cc8a.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-FO5BJJ»
+        Building C object CMakeFiles/cmTC_0cc8a.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_0cc8a.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-FO5BJJ/CheckSymbolExists.c
+        Linking C executable cmTC_0cc8a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0cc8a.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_0cc8a.dir/CheckSymbolExists.c.o -o cmTC_0cc8a
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-FO5BJJ»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:283 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-asq4du"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-asq4du"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_SETENV"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-asq4du'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3378d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3378d.dir/build.make CMakeFiles/cmTC_3378d.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-asq4du»
+        Building C object CMakeFiles/cmTC_3378d.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_3378d.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-asq4du/CheckSymbolExists.c
+        Linking C executable cmTC_3378d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3378d.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_3378d.dir/CheckSymbolExists.c.o -o cmTC_3378d
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-asq4du»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/resources.cmake:290 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-KGKeWh"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-KGKeWh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_TRUNC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-KGKeWh'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c089a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c089a.dir/build.make CMakeFiles/cmTC_c089a.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-KGKeWh»
+        Building C object CMakeFiles/cmTC_c089a.dir/CheckSymbolExists.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_c089a.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-KGKeWh/CheckSymbolExists.c
+        Linking C executable cmTC_c089a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c089a.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c089a.dir/CheckSymbolExists.c.o -o cmTC_c089a  -lm
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-KGKeWh»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/fltk-src/CMake/resources.cmake:297 (try_compile)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+      binary: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "V"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_4b75e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_4b75e.dir/build.make CMakeFiles/cmTC_4b75e.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        Building CXX object CMakeFiles/cmTC_4b75e.dir/posixScandir.cxx.o
+        /usr/bin/c++   -std=gnu++23 -o CMakeFiles/cmTC_4b75e.dir/posixScandir.cxx.o -c /home/artem/cpp_sem1/build/_deps/fltk-src/CMake/posixScandir.cxx
+        Linking CXX executable cmTC_4b75e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b75e.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_4b75e.dir/posixScandir.cxx.o -o cmTC_4b75e
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/fltk-src/CMake/options.cmake:709 (check_symbol_exists)"
+      - "build/_deps/fltk-src/CMakeLists.txt:78 (include)"
+    checks:
+      - "Looking for glXGetProcAddressARB"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NluP6f"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NluP6f"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_GLXGETPROCADDRESSARB"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NluP6f'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fb0b5/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fb0b5.dir/build.make CMakeFiles/cmTC_fb0b5.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NluP6f»
+        Building C object CMakeFiles/cmTC_fb0b5.dir/CheckSymbolExists.c.o
+        /usr/bin/cc  -I/usr/include/GL  -o CMakeFiles/cmTC_fb0b5.dir/CheckSymbolExists.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NluP6f/CheckSymbolExists.c
+        Linking C executable cmTC_fb0b5
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb0b5.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_fb0b5.dir/CheckSymbolExists.c.o -o cmTC_fb0b5  -L/usr/lib64 -L/usr/lib64 -lX11 -lGLU -lGL
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-NluP6f»
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/_deps/fltk-src/CMake/options.cmake:746 (include)"
+      - "build/_deps/fltk-src/CMakeLists.txt:78 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-LERTnF"
+      binary: "/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-LERTnF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-LERTnF'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_204b2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_204b2.dir/build.make CMakeFiles/cmTC_204b2.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-LERTnF»
+        Building C object CMakeFiles/cmTC_204b2.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD -I/usr/include/GL  -o CMakeFiles/cmTC_204b2.dir/src.c.o -c /home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-LERTnF/src.c
+        Linking C executable cmTC_204b2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_204b2.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_204b2.dir/src.c.o -o cmTC_204b2
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/CMakeFiles/CMakeScratch/TryCompile-LERTnF»
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/fltk-src/CMake/resources.cmake:149 (try_compile)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+      binary: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_33116/fast
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        /usr/bin/gmake  -f CMakeFiles/cmTC_33116.dir/build.make CMakeFiles/cmTC_33116.dir/build
+        gmake[2]: вход в каталог «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        Building C object CMakeFiles/cmTC_33116.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_33116.dir/pthread_mutex_recursive.c.o -c /home/artem/cpp_sem1/build/_deps/fltk-src/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_33116
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33116.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_33116.dir/pthread_mutex_recursive.c.o -o cmTC_33116
+        gmake[2]: выход из каталога «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "build/_deps/fltk-src/CMake/resources.cmake:149 (try_compile)"
+      - "build/_deps/fltk-src/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+      binary: "/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/artem/cpp_sem1/build/_deps/fltk-src/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_2a9c6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_2a9c6.dir/build.make CMakeFiles/cmTC_2a9c6.dir/build
+        gmake[1]: вход в каталог «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        Building C object CMakeFiles/cmTC_2a9c6.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc    -o CMakeFiles/cmTC_2a9c6.dir/pthread_mutex_recursive.c.o -c /home/artem/cpp_sem1/build/_deps/fltk-src/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_2a9c6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a9c6.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_2a9c6.dir/pthread_mutex_recursive.c.o -o cmTC_2a9c6
+        gmake[1]: выход из каталога «/home/artem/cpp_sem1/build/_deps/fltk-build/CMakeFiles/CMakeTmp»
+        
+      exitCode: 0
+...

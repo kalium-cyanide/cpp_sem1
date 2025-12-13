@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfrontend.a CMakeFiles/frontend.dir/PlayerWidget.cpp.o CMakeFiles/frontend.dir/board_widget.cpp.o CMakeFiles/frontend.dir/cell_widget.cpp.o
+/usr/bin/ranlib libfrontend.a
