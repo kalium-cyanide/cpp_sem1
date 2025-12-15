@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <initializer_list>
 #include <ostream>
 
@@ -65,22 +66,22 @@ typedef Vector2<float> vec2f32;
 typedef Vector2<double> vec2f64;
 
 // signed
-typedef Vector2<__int8> vec2i8;
+typedef Vector2<int8_t> vec2i8;
 
-typedef Vector2<__int16> vec2i16;
+typedef Vector2<int16_t> vec2i16;
 
-typedef Vector2<__int32> vec2i32;
+typedef Vector2<int32_t> vec2i32;
 
-typedef Vector2<__int64> vec2i64;
+typedef Vector2<int64_t> vec2i64;
 
 // unsigned
-typedef Vector2<unsigned __int8> vec2ui8;
+typedef Vector2<uint8_t> vec2ui8;
 
-typedef Vector2<unsigned __int16> vec2ui16;
+typedef Vector2<uint16_t> vec2ui16;
 
-typedef Vector2<unsigned __int32> vec2ui32;
+typedef Vector2<uint32_t> vec2ui32;
 
-typedef Vector2<unsigned __int64> vec2ui64;
+typedef Vector2<uint64_t> vec2ui64;
 
 /* +++ */
 template<typename type>

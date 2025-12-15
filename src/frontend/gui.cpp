@@ -56,20 +56,27 @@ void make_move(int from_col, int from_row, int to_col, int to_row) {
     auto players = game_core->getPlayers();
 
     Move move;
-    move.from = {from_col, from_row};
-    move.to = {to_col, to_row};
-    move.special = Move::EMPTY;
 
+    if (from_col == -1) {
+        move.from = {0, 0};
+        move.to = {0, 0};
+        move.special = Move::SHORT_CASTLING;
+    } else if (from_col == -2) {
+        move.from = {0, 0};
+        move.to = {0, 0};
+        move.special = Move::LONG_CASTLING;
+    } else {
 
+        move.from = {from_col, from_row};
+        move.to = {to_col, to_row};
+        move.special = Move::EMPTY;
+    }
     for (auto *player: players) {
-
-
         auto *gui_player = dynamic_cast<GuiHumanPlayer *>(player);
         if (gui_player) {
             gui_player->provideMove(move);
         }
     }
-
 
     std::this_thread::sleep_for(std::chrono::milliseconds(20ll));
 }
@@ -80,20 +87,16 @@ void game_thread_func() {
     }
 }
 
-
 int get_game_status() {
     if (!game_core) return -1;
     return game_core->getGameResult();
 }
 
-
 void restart_game() {
-
 
     if (game_core) {
         game_core->closeGame();
     }
-
 
     game_core = new ClassicChessCore();
     auto *p1 = new GuiHumanPlayer(0, "White");

@@ -168,7 +168,26 @@ function handle_input(w, type, input)
             local to_row = math.floor(rel_y / cell_h) + 1
 
             if to_col >= 1 and to_col <= 8 and to_row >= 1 and to_row <= 8 then
-                make_move(d.from_col, d.from_row, to_col, to_row)
+                local is_castling = false
+
+                if d.from_row == 1 or d.from_row == 8 then
+
+                    if d.from_col == 5 then
+
+                        if to_col == 7 or to_col == 8 then
+                            make_move(-1, 0, 0, 0)
+                            is_castling = true
+
+                        elseif to_col == 3 or to_col == 1 then
+                            make_move(-2, 0, 0, 0)
+                            is_castling = true
+                        end
+                    end
+                end
+
+                if not is_castling then
+                    make_move(d.from_col, d.from_row, to_col, to_row)
+                end
                 check_game_over()
             end
 
@@ -315,4 +334,4 @@ end
 
 init_pool()
 bind_buttons()
-switch_scene("MENU") 
+switch_scene("MENU")
