@@ -12,43 +12,49 @@ struct ValidatorInput;
 struct ValidatorOutput;
 
 class ClassicChessCore : public IGameCore {
- private:
-  array_t<IPlayer*> players_m;
-  IBoard* board;
+private:
+    array_t<IPlayer *> players_m;
+    IBoard *board;
 
-  color_t currentPlayerIndex_m;
-  Validator validator_m;
-  bool isGameActive_m;
-  possible_moves_table* possible_move_table_m;
+    color_t currentPlayerIndex_m;
+    Validator validator_m;
+    bool isGameActive_m;
+    possible_moves_table *possible_move_table_m;
 
-  array_t<IFigure*> capturedFigures;
-  array_t<std::pair<IPlayer*, std::pair<IFigure*, Move>>>* move_history;
+    array_t<IFigure *> capturedFigures;
+    array_t<std::tuple<IPlayer *, IFigure *, Move>> *move_history;
 
-  void initializePlayers();
-  void initializeBoard();
-  void initializeValidator();
+    void initializePlayers();
+    void initializeBoard();
+    void initializeValidator();
 
-  void setupClassicFigures(IBoard& board_a);
+    void setupClassicFigures(IBoard &board_a);
 
-  wchar_t to_wchar(IFigure* figure);
+    wchar_t to_wchar(IFigure *figure);
 
-  void captureFigure(const Move& move);
-  void moveFigure(const Move& move);
-  void castling(const Move& move);
-  void upgradePawn();
-  ValidatorOutput moveValidate(IPlayer* player, const Move& move);
+    void captureFigure(const Move &move);
+    void moveFigure(const Move &move);
+    void castling(const Move &move);
+    void upgradePawn();
+    bool hasAnyValidMoves(color_t playerColor);
+    bool isKingInCheck(color_t playerColor);
 
-  void gameStep();
+    ValidatorOutput moveValidate(IPlayer *player, const Move &move);
 
- public:
-  ClassicChessCore();
-  ~ClassicChessCore();
+    void gameStep();
 
-  void startGame() override;
-  void closeGame() override;
+    int gameResult = -1;
 
-  array_t<IPlayer*> getPlayers() override;
-  IBoard* getBoard() override;
+public:
+    ClassicChessCore();
+    ~ClassicChessCore();
 
-  void setPlayers(IPlayer* player1, IPlayer* player2);
+    void startGame() override;
+    void closeGame() override;
+    int getGameResult() const;
+
+    array_t<IPlayer *> getPlayers() override;
+    IBoard *getBoard() override;
+
+    void setPlayers(IPlayer *player1, IPlayer *player2);
 };

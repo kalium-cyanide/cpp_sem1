@@ -1,47 +1,52 @@
+#pragma once
+
 #include "../Players.hpp"
 #include "../utility.hpp"
-#include <future>
+#include <condition_variable>
+#include <mutex>
+#include <optional>
 
-class GuiHumanPlayer : public IPlayer
-{
-  public:
-    GuiHumanPlayer(color_t color, string_t name) : m_color(color), m_name(name)
-    {
+
+class GuiHumanPlayer : public IPlayer {
+public:
+    GuiHumanPlayer(color_t color, string_t name) : m_color(color), m_name(name) {
     }
 
-    string_t getName() override
-    {
+    string_t getName() override {
         return m_name;
     }
 
-    color_t getColor() override
-    {
+    color_t getColor() override {
         return m_color;
     }
 
-    Move doMove() override
-    {
-        m_move_promise = std::promise<Move>();
+    Move doMove() override {
+        std::unique_lock<std::mutex> lock(m_mutex);
 
-        std::future<Move> move_future = m_move_promise.get_future();
+        m_cv.wait(lock, [this] { return m_pending_move.has_value(); });
 
-        return move_future.get();
+        Move move = m_pending_move.value();
+
+        m_pending_move.reset();
+
+        return move;
     }
 
-    void provideMove(const Move &move)
-    {
-        try
+
+    void provideMove(const Move &move) {
         {
-            m_move_promise.set_value(move);
+            std::lock_guard<std::mutex> lock(m_mutex);
+            m_pending_move = move;
         }
-        catch (const std::future_error &e)
-        {
-            std::cerr << "Promise error: " << e.what() << std::endl;
-        }
+
+        m_cv.notify_one();
     }
 
-  private:
+private:
     color_t m_color;
     string_t m_name;
-    std::promise<Move> m_move_promise;
+
+    std::mutex m_mutex;
+    std::condition_variable m_cv;
+    std::optional<Move> m_pending_move;
 };

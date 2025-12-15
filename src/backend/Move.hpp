@@ -2,13 +2,11 @@
 
 #include "utility.hpp"
 
-struct Move
-{
+struct Move {
     position_t from;
     position_t to;
 
-    enum special_moves
-    {
+    enum special_moves {
         EMPTY,
         LONG_CASTLING,
         SHORT_CASTLING

@@ -33,8 +33,7 @@ add_library(backend
         PossibleMovesGenerator.hpp
         utility.hpp
         Vector2.hpp
-        ../frontend/main_window.cpp
-        ../frontend/main_window.hpp
+        
 )
 
 target_include_directories(backend PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

@@ -4,26 +4,21 @@
 
 #include <vector>
 
-class Rook : public IFigure
-{
+class Rook : public IFigure {
     color_t color_m;
 
-  public:
-    Rook(color_t color) : color_m(color)
-    {}
+public:
+    Rook(color_t color) : color_m(color) {}
 
-    color_t getColor() override
-    {
+    color_t getColor() override {
         return color_m;
     }
 
-    void setColor(color_t color) override
-    {
+    void setColor(color_t color) override {
         color_m = color;
     }
 
-    bool isPossibleMove(const Move& move) override
-    {
+    bool isPossibleMove(const Move &move) override {
         position_t offset = move.to - move.from;
 
         if (std::abs(offset.x) > 0 and offset.y == 0) { return true; }
@@ -32,8 +27,7 @@ class Rook : public IFigure
         return false;
     }
 
-    string_t getType() override
-    {
+    string_t getType() override {
         return "rook";
     }
 };

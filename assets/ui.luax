@@ -1,0 +1,63 @@
+<div id="root">
+    <div id="game-layer">
+        {
+            local html = '<div id="board" class="board">'
+            
+
+
+            for row = 1, 8 do
+                for col = 1, 8 do
+                    local is_white_cell = (row + col) % 2 == 0
+                    local cell_class = is_white_cell and "white" or "black"
+                    html = html .. '<div class="cell ' .. cell_class .. '">'  .. '</div>'
+                end
+            end
+            html = html .. '</div>'
+
+            
+
+
+             local layout = {
+                {"Rb", "Nb", "Bb", "Qb", "Kb", "Bb", "Nb", "Rb"},
+                {"Pb", "Pb", "Pb", "Pb", "Pb", "Pb", "Pb", "Pb"},
+                {"", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", ""},
+                {"", "", "", "", "", "", "", ""},
+                {"Pw", "Pw", "Pw", "Pw", "Pw", "Pw", "Pw", "Pw"},
+                {"Rw", "Nw", "Bw", "Qw", "Kw", "Bw", "Nw", "Rw"}
+            }
+            local names = { R = "r", N = "n", B = "b", Q = "q", K = "k", P = "p" }
+
+            for row = 1, 8 do
+                for col = 1, 8 do
+                    local code = layout[row][col]
+                    if code ~= "" then
+                        local type = code:sub(1,1)
+                        local color = code:sub(2,2)
+                        local piece_name = color .. names[type]
+                        local filename = "../assets/" .. piece_name .. ".svg"
+                        html = html .. '<img src="' .. filename .. '" class="piece" id="' .. piece_name .. '"/>'
+                    end
+                end
+            end
+            echo(html)
+        }
+    </div>
+
+    <div id="main-menu" class="menu-overlay">
+        <div class="menu-box">
+            <div class="menu-title">CHESS</div>
+            <div id="btn-start" class="btn">Start Game</div>
+            <div id="btn-exit" class="btn">Exit</div>
+        </div>
+    </div>
+
+    <div id="game-over-screen" class="menu-overlay">
+        <div class="menu-box">
+            <div id="winner-text" class="menu-title">Game Over</div>
+            <div id="btn-restart" class="btn">Play Again</div>
+            <div id="btn-menu" class="btn">Main Menu</div>
+        </div>
+    </div>
+</div>
