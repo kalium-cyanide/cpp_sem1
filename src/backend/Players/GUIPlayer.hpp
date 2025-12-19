@@ -31,8 +31,7 @@ public:
 
         return move;
     }
-
-
+    
     void provideMove(const Move &move) {
         {
             std::lock_guard<std::mutex> lock(m_mutex);

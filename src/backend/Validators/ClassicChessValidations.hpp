@@ -103,6 +103,7 @@ struct ClassicChessValidations {
             return;
         }
 
+
         auto isLongCastling = move.special == Move::LONG_CASTLING;
 
         auto kingPos = position_t{5, (player->getColor() == 0) ? (1) : (8)};
@@ -125,6 +126,14 @@ struct ClassicChessValidations {
             if (board->getFigure({i, kingPos.y}) != nullptr) {
                 out.result = false;
                 out.errors.push_back("path is not empty");
+                return;
+            }
+        }
+
+        for (auto [p, f, m]: *in.move_history) {
+            if (p == player and dynamic_cast<King *>(f)) {
+                out.result = false;
+                out.errors.emplace_back("king was moved");
                 return;
             }
         }
@@ -224,6 +233,7 @@ struct ClassicChessValidations {
         auto &move = in.move;
         auto boardState = board->getBoardState();
         auto &figures = boardState->figures_m;
+        auto color = boardState->player_to_move;
 
         auto movedFigure = board->getFigure(move.from);
         auto attackedFigure = board->getFigure(move.to);
@@ -234,7 +244,7 @@ struct ClassicChessValidations {
         }
 
         if (std::abs(move.to.x - move.from.x) == 1 and
-            std::abs(move.to.y - move.from.y) == 1) {
+            move.to.y - move.from.y == (color ? -1 : 1)) {
             if (attackedFigure != nullptr) {
                 return;
             }
@@ -268,7 +278,7 @@ struct ClassicChessValidations {
             return;
         }
 
-        if (move.to.x == move.from.x) {
+        if (move.to.x == move.from.x or (std::abs(move.to.x - move.from.x) == 1 and board->getFigure(move.to) != nullptr)) {
             next();
             return;
         }
@@ -282,14 +292,14 @@ struct ClassicChessValidations {
 
         auto [lastPlayer, lastFigure, lastMove] = move_history->back();
 
-        bool enPassantCondition = lastFigure->getType() == "pawn" &&
-                                  std::abs(lastMove.to.y - lastMove.from.y) == 2 &&
-                                  lastMove.to.y == move.from.y &&
-                                  lastMove.to.x == move.to.x;
+        bool enPassantCondition = lastFigure->getType() == "pawn" and
+                                  std::abs(lastMove.to.y - lastMove.from.y) == 2 and
+                                  lastMove.to.y == move.from.y and
+                                  lastMove.to.x == move.to.x and lastPlayer != player;
 
         if (std::abs(move.to.x - move.from.x) == 1 && attackedFigure == nullptr &&
             enPassantCondition) {
-            next();
+            move.special = Move::EN_PASSANT;
             return;
         }
 

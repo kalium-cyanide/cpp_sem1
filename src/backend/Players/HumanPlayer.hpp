@@ -27,7 +27,7 @@ public:
         position_t from, to;
 
         while (true) {
-            std::cout << name_m << " (" << (color_m == 0 ? "WHITE" : "BLACK") << "), enter your move (e2 e4): ";
+            //std::cout << name_m << " (" << (color_m == 0 ? "WHITE" : "BLACK") << "), enter your move (e2 e4): ";
             std::getline(std::cin, inputStr);
 
             if (inputStr == "0-0") { return Move(position_t(), position_t(), Move::SHORT_CASTLING); }

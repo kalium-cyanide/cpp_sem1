@@ -14,16 +14,14 @@ void ClassicChessCore::startGame() {
     isGameActive_m = true;
 
     while (isGameActive_m) {
-
-
         gameStep();
-
+        
         currentPlayerIndex_m = (currentPlayerIndex_m + 1) % players_m.size();
     }
 }
 
 ValidatorOutput ClassicChessCore::moveValidate(IPlayer *player,
-                                               const Move &move) {
+                                               Move &move) {
     std::cout << "move validation start\n";
 
     ValidatorInput input = {possible_move_table_m, board, player, move};
@@ -36,7 +34,7 @@ ValidatorOutput ClassicChessCore::moveValidate(IPlayer *player,
     return output;
 }
 
-void ClassicChessCore::captureFigure(const Move &move) {
+void ClassicChessCore::captureFigure(Move &move) {
     IFigure *figureToMove = board->getFigure(move.from);
     IFigure *capturedFigure = board->getFigure(move.to);
 
@@ -44,12 +42,13 @@ void ClassicChessCore::captureFigure(const Move &move) {
     board->removeFigure(move.to);
 }
 
-void ClassicChessCore::moveFigure(const Move &move) {
+void ClassicChessCore::moveFigure(Move &move) {
     if (move.special == Move::SHORT_CASTLING or
         move.special == Move::LONG_CASTLING) {
         castling(move);
         return;
     }
+
 
     IPlayer *currentPlayer = players_m[currentPlayerIndex_m];
 
@@ -58,6 +57,12 @@ void ClassicChessCore::moveFigure(const Move &move) {
 
     if (capturedFigure != nullptr) {
         captureFigure(move);
+    }
+
+
+    if (move.special == Move::EN_PASSANT) {
+        auto ghost_move = Move{move.from, {move.to.x, move.from.y}, move.special};
+        captureFigure(ghost_move);
     }
 
     board->setFigure(move.to, figureToMove);
@@ -73,7 +78,7 @@ bool ClassicChessCore::isKingInCheck(color_t playerColor) {
     for (int x = 1; x <= size.x; ++x) {
         for (int y = 1; y <= size.y; ++y) {
             IFigure *fig = board->getFigure({x, y});
-            if (fig && fig->getType() == "king" && fig->getColor() == playerColor) {
+            if (fig and fig->getType() == "king" and fig->getColor() == playerColor) {
                 kingPos = {x, y};
                 break;
             }
@@ -98,14 +103,14 @@ bool ClassicChessCore::hasAnyValidMoves(color_t playerColor) {
             position_t from(x, y);
             IFigure *fig = board->getFigure(from);
 
-            if (fig == nullptr || fig->getColor() != playerColor) continue;
+            if (fig == nullptr or fig->getColor() != playerColor) continue;
 
             for (int tx = 1; tx <= size.x; ++tx) {
                 for (int ty = 1; ty <= size.y; ++ty) {
                     position_t to(tx, ty);
                     Move move = {from, to, Move::EMPTY};
 
-                    if (fig->isPossibleMove(move) || (fig->getType() == "pawn")) {
+                    if (fig->isPossibleMove(move) or (fig->getType() == "pawn")) {
 
                         ValidatorInput input = {possible_move_table_m, board, tempPlayer, move, move_history};
                         ValidatorOutput output;
@@ -123,7 +128,6 @@ bool ClassicChessCore::hasAnyValidMoves(color_t playerColor) {
 void ClassicChessCore::gameStep() {
     IPlayer *currentPlayer = players_m[currentPlayerIndex_m];
     board->getBoardState()->player_to_move = currentPlayer->getColor();
-
 
     bool inCheck = isKingInCheck(currentPlayer->getColor());
     bool hasMoves = hasAnyValidMoves(currentPlayer->getColor());
@@ -148,7 +152,7 @@ void ClassicChessCore::gameStep() {
 
     bool moveWasSuccessful = false;
 
-    while (!moveWasSuccessful && isGameActive_m) {
+    while (!moveWasSuccessful and isGameActive_m) {
         Move currentMove = currentPlayer->doMove();
 
         ValidatorInput input = {possible_move_table_m, board, currentPlayer, currentMove, move_history};
@@ -167,7 +171,7 @@ void ClassicChessCore::gameStep() {
     }
 }
 
-void ClassicChessCore::castling(const Move &move) {
+void ClassicChessCore::castling(Move &move) {
     auto currentPlayer = players_m[currentPlayerIndex_m];
 
     auto isLongCastling = move.special == Move::LONG_CASTLING;
@@ -205,12 +209,15 @@ void ClassicChessCore::initializeValidator() {
 
     validator_m.use(ClassicChessValidations::CastlingValidation);
 
+    validator_m.use(ClassicChessValidations::PawnEnPassantValidation);
+
     validator_m.use(ClassicChessValidations::BoardBorderValidation);
     validator_m.use(ClassicChessValidations::FigureExistenceValidation);
     validator_m.use(ClassicChessValidations::ColorValidation);
 
     validator_m.use(ClassicChessValidations::FirstPawnMoveValidation);
     validator_m.use(ClassicChessValidations::PawnAttackValidation);
+
 
     validator_m.use(ClassicChessValidations::PathClearValidation);
     validator_m.use(ClassicChessValidations::FigureMovePatternValidation);
@@ -219,6 +226,7 @@ void ClassicChessCore::initializeValidator() {
 
     for (auto fig: figure_prototypes) delete fig;
 }
+
 
 void ClassicChessCore::setupClassicFigures(IBoard &board_a) {
     for (int row = 1; row <= 8; row++) {
@@ -312,3 +320,39 @@ void ClassicChessCore::setPlayers(IPlayer *player1, IPlayer *player2) {
     players_m.push_back(player2);
 }
 int ClassicChessCore::getGameResult() const { return gameResult; }
+std::vector<position_t> ClassicChessCore::getLegalMovesForCell(int col, int row) {
+    std::vector<position_t> validMoves;
+    position_t from(col, row);
+
+    IFigure *fig = board->getFigure(from);
+    if (!fig) return validMoves;
+
+    IPlayer *owner = nullptr;
+    for (auto p: players_m) {
+        if (p->getColor() == fig->getColor()) owner = p;
+    }
+    if (!owner) return validMoves;
+
+    auto size = board->getBoardState()->size;
+
+
+    for (int x = 1; x <= size.x; ++x) {
+        for (int y = 1; y <= size.y; ++y) {
+            position_t to(x, y);
+            Move move = {from, to, Move::EMPTY};
+
+            if (fig->isPossibleMove(move) || fig->getType() == "pawn" || fig->getType() == "king") {
+
+
+                ValidatorInput input = {possible_move_table_m, board, owner, move, move_history};
+                ValidatorOutput output;
+                validator_m.validate(input, output);
+
+                if (output.result) {
+                    validMoves.push_back(to);
+                }
+            }
+        }
+    }
+    return validMoves;
+}

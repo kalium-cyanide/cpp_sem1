@@ -32,14 +32,13 @@ private:
 
     wchar_t to_wchar(IFigure *figure);
 
-    void captureFigure(const Move &move);
-    void moveFigure(const Move &move);
-    void castling(const Move &move);
+    void captureFigure(Move &move);
+    void moveFigure(Move &move);
+    void castling(Move &move);
     void upgradePawn();
     bool hasAnyValidMoves(color_t playerColor);
-    bool isKingInCheck(color_t playerColor);
 
-    ValidatorOutput moveValidate(IPlayer *player, const Move &move);
+    ValidatorOutput moveValidate(IPlayer *player, Move &move);
 
     void gameStep();
 
@@ -53,8 +52,11 @@ public:
     void closeGame() override;
     int getGameResult() const;
 
+
     array_t<IPlayer *> getPlayers() override;
     IBoard *getBoard() override;
 
     void setPlayers(IPlayer *player1, IPlayer *player2);
+    std::vector<position_t> getLegalMovesForCell(int col, int row);
+    bool isKingInCheck(color_t playerColor);
 };

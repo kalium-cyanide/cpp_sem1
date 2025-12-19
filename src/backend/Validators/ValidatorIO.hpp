@@ -10,7 +10,7 @@ struct ValidatorInput {
     possible_moves_table *possible_moves;
     IBoard *board;
     IPlayer *player;
-    Move move;
+    Move &move;
     array_t<std::tuple<IPlayer *, IFigure *, Move>> *move_history;
 };
 
