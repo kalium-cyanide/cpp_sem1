@@ -1,5 +1,6 @@
 #pragma once
 
+#include "html_widget.hpp"
 #include "layout_types.hpp"
 #include <FL/Fl_Double_Window.H>
 #include <functional>
@@ -7,7 +8,7 @@
 
 class BrowserWindow : public Fl_Double_Window {
     std::unique_ptr<StyledNode> layout_root_;
-    Fl_Group *fltk_root_;
+    HtmlWidget *fltk_root_;
 
 public:
     void update_layout(int width, int height);
@@ -17,7 +18,7 @@ public:
 
     void set_styled_root(std::unique_ptr<StyledNode> layout_root);
 
-    Fl_Group *get_root();
+    HtmlWidget *get_root();
 
     int handle(int event) override;
 

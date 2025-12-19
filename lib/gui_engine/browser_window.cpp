@@ -6,6 +6,12 @@
 
 BrowserWindow::BrowserWindow(int width, int height, std::string_view title) : Fl_Double_Window(width, height, title.data()), fltk_root_(nullptr), layout_root_(nullptr) {
     this->end();
+
+    HtmlWidget::trigger_layout_update = [this]() {
+        // Вызываем update_layout с текущими размерами
+        this->update_layout(this->w(), this->h());
+        this->redraw();
+    };
 }
 
 void BrowserWindow::set_styled_root(std::unique_ptr<StyledNode> layout_root) {
@@ -51,7 +57,7 @@ void BrowserWindow::resize(int x, int y, int width, int height) {
     update_layout(width, height);
 }
 
-Fl_Group *BrowserWindow::get_root() {
+HtmlWidget *BrowserWindow::get_root() {
     return this->fltk_root_;
 }
 int BrowserWindow::handle(int event) {

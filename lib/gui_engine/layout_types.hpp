@@ -1,6 +1,7 @@
 #pragma once
 
 #include "dom_types.hpp"
+#include <algorithm>
 #include <map>
 #include <memory>
 #include <string>
@@ -21,6 +22,22 @@ struct StyledNode {
         return "";
     }
 };
+
+
+inline std::unique_ptr<StyledNode> detach_styled_node(StyledNode *parent, StyledNode *child_to_find) {
+    auto &children = parent->children;
+    auto it = std::find_if(children.begin(), children.end(),
+                           [child_to_find](const std::unique_ptr<StyledNode> &ptr) {
+                               return ptr.get() == child_to_find;
+                           });
+
+    if (it != children.end()) {
+        std::unique_ptr<StyledNode> moved_node = std::move(*it);
+        children.erase(it);
+        return moved_node;
+    }
+    return nullptr;
+}
 
 struct LayoutBox {
     float x = 0.0f;

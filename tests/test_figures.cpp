@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 /* ---------- King ---------- */
 TEST(King, NormalMove) {
     King k(0);

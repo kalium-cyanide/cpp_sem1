@@ -11,6 +11,8 @@
 #include <FL/Fl_SVG_Image.H>
 #include <FL/fl_draw.H>
 
+#include <algorithm>
+#include <cassert>
 #include <cstdio>
 #include <map>
 #include <string>
@@ -22,7 +24,7 @@ namespace {
 
         unsigned int r = 0, g = 0, b = 0;
 
-        if (css_color[0] == '#' && css_color.length() == 7) {
+        if (css_color[0] == '#' and css_color.length() == 7) {
             if (sscanf(css_color.c_str() + 1, "%02x%02x%02x", &r, &g, &b) == 3) {
                 return fl_rgb_color(r, g, b);
             }
@@ -47,7 +49,7 @@ namespace {
         return FL_BLACK;
     }
 
-    Fl_Widget *CreateWidgetRecursive(LayoutBox *box) {
+    HtmlWidget *CreateWidgetRecursive(const LayoutBox *box) {
         if (!box) return nullptr;
 
         StyledNode *node = box->styled_node_ref;
@@ -58,7 +60,7 @@ namespace {
         int w = static_cast<int>(box->width);
         int h = static_cast<int>(box->height);
 
-        Fl_Widget *widget = nullptr;
+        HtmlWidget *widget = nullptr;
 
         if (node->name == "img") {
             auto src = node->ref->attributes["src"];
@@ -77,7 +79,8 @@ namespace {
 
             auto *wi = new HtmlWidget(x, y, w, h, node);
 
-            if (loaded_img && loaded_img->w() > 0 && loaded_img->h() > 0) {
+
+            if (loaded_img and loaded_img->w() > 0 and loaded_img->h() > 0) {
                 wi->image(loaded_img);
             } else {
                 delete loaded_img;
@@ -98,41 +101,95 @@ namespace {
             group->end();
         }
 
+
         return widget;
     }
+
+
+    struct WidgetZOrder {
+        Fl_Widget *widget;
+        int z_index;
+        int original_index;
+    };
 
     void update_recursive(Fl_Group *parentWidget, const LayoutBox *parentLayout) {
 
 
+        int fltk_children_count = parentWidget->children();
+
         for (size_t i = 0; i < parentLayout->children.size(); ++i) {
-            Fl_Widget *childWidget = parentWidget->child(i);
+
+
+            if (i >= fltk_children_count) break;
+
+            Fl_Widget *childBase = parentWidget->child(i);
             const LayoutBox *childLayout = parentLayout->children[i].get();
+
+
+            if (auto *htmlChild = dynamic_cast<HtmlWidget *>(childBase)) {
+                htmlChild->set_styled_node(childLayout->styled_node_ref);
+            }
+
 
             bool is_absolute = childLayout->styled_node_ref->styles["position"] == "absolute";
 
             if (childLayout->styled_node_ref->styles["display"] == "none") {
-                childWidget->hide();
+                childBase->hide();
             } else {
-                childWidget->show();
+                childBase->show();
             }
 
-            childWidget->resize(
+            childBase->resize(
                     (int) childLayout->x + (is_absolute ? 0 : parentWidget->x()),
                     (int) childLayout->y + (is_absolute ? 0 : parentWidget->y()),
                     (int) childLayout->width,
                     (int) childLayout->height);
 
-            if (auto *group = dynamic_cast<Fl_Group *>(childWidget)) {
+            if (auto *group = dynamic_cast<Fl_Group *>(childBase)) {
                 update_recursive(group, childLayout);
             }
         }
+
+
+        std::vector<WidgetZOrder> items;
+        items.reserve(parentWidget->children());
+
+        for (int i = 0; i < parentWidget->children(); ++i) {
+            Fl_Widget *w = parentWidget->child(i);
+            int z = 0;
+            if (auto *hw = dynamic_cast<HtmlWidget *>(w)) {
+
+                auto zi = hw->get_style("z-index");
+                z = zi == "" ? 0 : std::stoi(zi);
+            }
+            items.push_back({w, z, i});
+        }
+
+
+        std::stable_sort(items.begin(), items.end(), [](const WidgetZOrder &a, const WidgetZOrder &b) {
+            if (a.z_index != b.z_index) {
+                return a.z_index < b.z_index;
+            }
+            return a.original_index < b.original_index;
+        });
+
+
+        for (const auto &item: items) {
+            parentWidget->remove(item.widget);
+        }
+
+        for (const auto &item: items) {
+            parentWidget->add(item.widget);
+        }
+
+        parentWidget->init_sizes();
     }
 
 }// namespace
 
 namespace fltk_renderer {
 
-    void update_widget_tree(Fl_Group *rootWidget, const LayoutBox *newLayoutRoot) {
+    void update_widget_tree(HtmlWidget *rootWidget, const LayoutBox *newLayoutRoot) {
         if (!rootWidget || !newLayoutRoot) { return; }
 
 
@@ -145,25 +202,10 @@ namespace fltk_renderer {
         update_recursive(rootWidget, newLayoutRoot);
     }
 
-    Fl_Group *create_widget_tree(const LayoutBox *root_box) {
+    HtmlWidget *create_widget_tree(const LayoutBox *root_box) {
         if (!root_box) return nullptr;
 
-        Fl_Group *root_widget = new Fl_Group(
-                static_cast<int>(root_box->x),
-                static_cast<int>(root_box->y),
-                static_cast<int>(root_box->width),
-                static_cast<int>(root_box->height));
-
-        root_widget->box(FL_FLAT_BOX);
-        root_widget->color(FL_BACKGROUND_COLOR);
-
-        root_widget->begin();
-        for (const auto &child_box: root_box->children) {
-            CreateWidgetRecursive(child_box.get());
-        }
-        root_widget->end();
-
-        return root_widget;
+        return CreateWidgetRecursive(root_box);
     }
 
 }// namespace fltk_renderer

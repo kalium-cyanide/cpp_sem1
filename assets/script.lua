@@ -3,7 +3,6 @@ local original_positions = {}
 local app = {
     state = "MENU",
 
-
     ui = {
         menu = query("#main-menu"):get(0),
         game_layer = query("#game-layer"):get(0),
@@ -11,7 +10,6 @@ local app = {
         board = query("#board"):get(0),
         winner_text = query("#winner-text"):get(0)
     },
-
 
     game = {
         widget_pool = {},
@@ -26,25 +24,24 @@ function set_visible(widget, is_visible)
     end
 
     local id = widget:id()
+    local position = widget:get_style('position')
 
     if is_visible then
-
-
         local x = original_positions[id] and original_positions[id].x or "0px"
         local y = original_positions[id] and original_positions[id].y or "0px"
+        widget:set_style('position', original_positions[id].type)
 
         widget:set_style("left", x)
         widget:set_style("top", y)
     else
-
-
         if not original_positions[id] then
             original_positions[id] = {
                 x = widget:x() .. "px",
-                y = widget:y() .. "px"
+                y = widget:y() .. "px",
+                type = position
             }
         end
-
+        widget:set_style('position', 'absolute')
         widget:set_style("left", "10000px")
         widget:set_style("top", "10000px")
     end
@@ -64,12 +61,17 @@ local function init_pool()
             app.game.widget_pool[id] = {}
         end
 
-        w:callback(function(_, type, input_state)
-            handle_input(w, type, input_state)
+        w:addEventListener("mousedown", function(e)
+            handle_input(w, e)
+        end)
+        w:addEventListener("mousemove", function(e)
+            handle_input(w, e)
+        end)
+        w:addEventListener("mouseup", function(e)
+            handle_input(w, e)
         end)
 
         table.insert(app.game.widget_pool[id], w)
-
         set_visible(w, false)
         i = i + 1
     end
@@ -86,7 +88,6 @@ function sync_board_state()
     for row = 1, 8 do
         for col = 1, 8 do
             local fig_type = get_figure(col, row)
-
             if fig_type ~= "" then
                 if not used_counters[fig_type] then
                     used_counters[fig_type] = 1
@@ -95,7 +96,6 @@ function sync_board_state()
 
                 if app.game.widget_pool[fig_type] and app.game.widget_pool[fig_type][idx] then
                     local w = app.game.widget_pool[fig_type][idx]
-
                     table.insert(app.game.active_pieces, {
                         widget = w,
                         col = col,
@@ -120,7 +120,9 @@ function sync_board_state()
     end
 end
 
-function handle_input(w, type, input)
+function handle_input(w, e)
+    print("Event type: " .. e.type .. ", client_x: " .. e.client_x .. ", client_y: " .. e.client_y)
+
     if app.state ~= "GAME" then
         return
     end
@@ -128,12 +130,11 @@ function handle_input(w, type, input)
     local d = app.game.drag
     local b = app.ui.board
 
-    if type == 0 then
-
+    if e.type == "mousedown" then
         d.active = true
         d.widget = w
-        d.start_mx = input.mx
-        d.start_my = input.my
+        d.start_mx = e.client_x
+        d.start_my = e.client_y
         d.orig_x = w:x()
         d.orig_y = w:y()
 
@@ -144,22 +145,25 @@ function handle_input(w, type, input)
                 break
             end
         end
+        e:stopPropagation()
 
-    elseif type == 1 and d.active and d.widget == w then
-
-        local dx = input.mx - d.start_mx
-        local dy = input.my - d.start_my
+    elseif e.type == "mousemove" and d.active and d.widget == w then
+        local dx = e.client_x - d.start_mx
+        local dy = e.client_y - d.start_my
         w:set_style("left", (d.orig_x + dx) .. "px")
         w:set_style("top", (d.orig_y + dy) .. "px")
 
-    elseif type == 2 then
-
+    elseif e.type == "mouseup" then
         if d.active and d.widget == w and b then
+
+            w:set_style("left", d.orig_x .. "px")
+            w:set_style("top", d.orig_y .. "px")
+
             local cell_w = b:w() / 8
             local cell_h = b:h() / 8
 
-            local release_x = w:x() + w:w() / 2
-            local release_y = w:y() + w:h() / 2
+            local release_x = e.client_x
+            local release_y = e.client_y
 
             local rel_x = release_x - b:x()
             local rel_y = release_y - b:y()
@@ -168,20 +172,17 @@ function handle_input(w, type, input)
             local to_row = math.floor(rel_y / cell_h) + 1
 
             if to_col >= 1 and to_col <= 8 and to_row >= 1 and to_row <= 8 then
+
+                local from_type = get_figure(d.from_col, d.from_row)
                 local is_castling = false
 
-                if d.from_row == 1 or d.from_row == 8 then
-
-                    if d.from_col == 5 then
-
-                        if to_col == 7 or to_col == 8 then
-                            make_move(-1, 0, 0, 0)
-                            is_castling = true
-
-                        elseif to_col == 3 or to_col == 1 then
-                            make_move(-2, 0, 0, 0)
-                            is_castling = true
-                        end
+                if (d.from_row == 1 or d.from_row == 8) and d.from_col == 5 then
+                    if to_col == 7 or to_col == 8 then
+                        make_move(-1, 0, 0, 0)
+                        is_castling = true
+                    elseif to_col == 3 or to_col == 1 then
+                        make_move(-2, 0, 0, 0)
+                        is_castling = true
                     end
                 end
 
@@ -190,66 +191,48 @@ function handle_input(w, type, input)
                 end
                 check_game_over()
             end
-
-            d.active = false
-            d.widget = nil
-
-            sync_board_state()
-            update_view()
         end
+
+        d.active = false
+        d.widget = nil
+        sync_board_state()
+        update_view()
     end
 end
 
 function update_view()
-    if app.state == "GAME" then
-        if not app.ui.board then
-            return
+    if app.state ~= "GAME" or not app.ui.board then
+        return
+    end
+
+    local bx = app.ui.board:x()
+    local by = app.ui.board:y()
+    local cell_w = app.ui.board:w() / 8
+    local cell_h = app.ui.board:h() / 8
+
+    for _, item in ipairs(app.game.active_pieces) do
+        local w = item.widget
+        w:set_style("width", cell_w .. "px")
+        w:set_style("height", cell_h .. "px")
+
+        if not (app.game.drag.active and app.game.drag.widget == w) then
+            local abs_x = bx + (item.col - 1) * cell_w
+            local abs_y = by + (item.row - 1) * cell_h
+            w:set_style("left", abs_x .. "px")
+            w:set_style("top", abs_y .. "px")
         end
-
-        local bx = app.ui.board:x()
-        local by = app.ui.board:y()
-        local cell_w = app.ui.board:w() / 8
-        local cell_h = app.ui.board:h() / 8
-
-        for _, item in ipairs(app.game.active_pieces) do
-            local w = item.widget
-
-            w:set_style("width", cell_w .. "px")
-            w:set_style("height", cell_h .. "px")
-
-            if not (app.game.drag.active and app.game.drag.widget == w) then
-                local abs_x = bx + (item.col - 1) * cell_w
-                local abs_y = by + (item.row - 1) * cell_h
-                w:set_style("left", abs_x .. "px")
-                w:set_style("top", abs_y .. "px")
-            end
-        end
-
-        check_game_over()
     end
 end
 
 function check_game_over()
     local status = cpp_get_status()
     if status ~= -1 then
-        local msg = "Game Over"
-        if status == 0 then
-            msg = "White Wins!"
-        end
-        if status == 1 then
-            msg = "Black Wins!"
-        end
-        if status == 2 then
-            msg = "Draw!"
-        end
-
         switch_scene("GAMEOVER")
     end
 end
 
 function switch_scene(new_state)
     app.state = new_state
-    print("Switching to state: " .. new_state)
 
     set_visible(app.ui.menu, false)
     set_visible(app.ui.game_over, false)
@@ -267,7 +250,6 @@ function switch_scene(new_state)
 
     if new_state == "MENU" then
         set_visible(app.ui.menu, true)
-
     elseif new_state == "GAME" then
         set_visible(app.ui.game_layer, true)
         if app.ui.board then
@@ -275,15 +257,14 @@ function switch_scene(new_state)
         end
         sync_board_state()
         update_view()
-
     elseif new_state == "GAMEOVER" then
-        set_visible(app.ui.game_layer, true)
+        set_visible(app.ui.game_layer, false)
         if app.ui.board then
-            set_visible(app.ui.board, true)
+            set_visible(app.ui.board, false)
         end
-        sync_board_state()
-        update_view()
+
         set_visible(app.ui.game_over, true)
+        update_view()
     end
 end
 
@@ -292,20 +273,11 @@ local function setup_button(selector, action)
     local btn = btn_list:get(0)
 
     if btn then
-        print("Button bound: " .. selector)
 
-        btn:callback(function(w, type, input)
-
-
-            if type == 0 then
-                return true
-            end
-
-            if type == 2 then
-                print("Click on " .. selector)
-                action()
-                return true
-            end
+        btn:addEventListener("click", function(e)
+            print("Click on " .. selector)
+            action()
+            e:stopPropagation()
         end)
     else
         print("ERROR: Button not found: " .. selector)
