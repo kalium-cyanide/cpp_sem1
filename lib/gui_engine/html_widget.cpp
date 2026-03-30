@@ -1,6 +1,8 @@
 #include "html_widget.hpp"
 #include "layout_types.hpp"
 #include <FL/Fl.H>
+#include <FL/Fl_JPEG_Image.H>
+#include <FL/Fl_PNG_Image.H>
 #include <FL/Fl_SVG_Image.H>
 #include <FL/fl_draw.H>
 #include <iostream>
@@ -9,7 +11,7 @@
 
 
 Fl_Color rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
-    
+
     return fl_rgb_color(r, g, b);
 }
 Fl_Color HtmlWidget::parse_color(const std::string &css_color) {
@@ -234,6 +236,21 @@ void HtmlWidget::set_styled_node(StyledNode *node) {
     styled_node_ref_ = node;
 }
 
+
+void HtmlWidget::set_image(std::string path) {
+    Fl_Image *loaded_img = nullptr;
+    if (path.ends_with(".svg")) loaded_img = new Fl_SVG_Image(path.c_str());
+    else if (path.ends_with(".png"))
+        loaded_img = new Fl_PNG_Image(path.c_str());
+    else if (path.ends_with(".jpg") || path.ends_with(".jpeg"))
+        loaded_img = new Fl_JPEG_Image(path.c_str());
+    if (loaded_img && loaded_img->w() > 0 && loaded_img->h() > 0) {
+        Fl_Widget::image(loaded_img);
+    } else {
+        delete loaded_img;
+    }
+    Fl_Widget::redraw();
+}
 
 std::function<void()> HtmlWidget::trigger_layout_update = nullptr;
 

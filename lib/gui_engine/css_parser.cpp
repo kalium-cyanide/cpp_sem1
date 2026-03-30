@@ -39,7 +39,6 @@ namespace CssParser {
         return specificity;
     }
 
-
     std::map<std::string, std::string> parse_declarations(std::string_view block) {
         std::map<std::string, std::string> declarations;
         size_t position = 0;

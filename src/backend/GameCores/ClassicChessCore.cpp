@@ -15,7 +15,7 @@ void ClassicChessCore::startGame() {
 
     while (isGameActive_m) {
         gameStep();
-        
+
         currentPlayerIndex_m = (currentPlayerIndex_m + 1) % players_m.size();
     }
 }
@@ -24,7 +24,7 @@ ValidatorOutput ClassicChessCore::moveValidate(IPlayer *player,
                                                Move &move) {
     std::cout << "move validation start\n";
 
-    ValidatorInput input = {possible_move_table_m, board, player, move};
+    ValidatorInput input = {&possible_move_table_m, board, player, move};
     ValidatorOutput output;
     output.result = true;
 
@@ -68,7 +68,7 @@ void ClassicChessCore::moveFigure(Move &move) {
     board->setFigure(move.to, figureToMove);
     board->removeFigure(move.from);
 
-    move_history->push_back({currentPlayer, figureToMove, move});
+    move_history.push_back({currentPlayer, figureToMove, move});
 }
 
 bool ClassicChessCore::isKingInCheck(color_t playerColor) {
@@ -112,7 +112,7 @@ bool ClassicChessCore::hasAnyValidMoves(color_t playerColor) {
 
                     if (fig->isPossibleMove(move) or (fig->getType() == "pawn")) {
 
-                        ValidatorInput input = {possible_move_table_m, board, tempPlayer, move, move_history};
+                        ValidatorInput input = {&possible_move_table_m, board, tempPlayer, move, &move_history};
                         ValidatorOutput output;
                         validator_m.validate(input, output);
 
@@ -155,7 +155,7 @@ void ClassicChessCore::gameStep() {
     while (!moveWasSuccessful and isGameActive_m) {
         Move currentMove = currentPlayer->doMove();
 
-        ValidatorInput input = {possible_move_table_m, board, currentPlayer, currentMove, move_history};
+        ValidatorInput input = {&possible_move_table_m, board, currentPlayer, currentMove, &move_history};
         ValidatorOutput output;
         validator_m.validate(input, output);
 
@@ -204,8 +204,7 @@ void ClassicChessCore::initializeValidator() {
     std::vector<IFigure *> figure_prototypes = {new Pawn(0), new Knight(0),
                                                 new Rook(0), new Bishop(0),
                                                 new Queen(0), new King(0)};
-    possible_move_table_m =
-            DataFabric::createPossibleMoveTable(board, figure_prototypes);
+    possible_move_table_m = std::move(DataFabric::createPossibleMoveTable(board, figure_prototypes));
 
     validator_m.use(ClassicChessValidations::CastlingValidation);
 
@@ -286,22 +285,18 @@ wchar_t ClassicChessCore::to_wchar(IFigure *figure) {
 
 ClassicChessCore::ClassicChessCore()
     : currentPlayerIndex_m(0), isGameActive_m(false) {
-    move_history = new array_t<std::tuple<IPlayer *, IFigure *, Move>>();
-
+    move_history = array_t<std::tuple<IPlayer *, IFigure *, Move>>();
 
     initializeBoard();
     initializeValidator();
 }
 
-ClassicChessCore::~ClassicChessCore() {
+ClassicChessCore::~ClassicChessCore() noexcept {
     for (auto player: players_m) {
         delete player;
     }
 
     delete board;
-
-    delete possible_move_table_m;
-    delete move_history;
 }
 
 void ClassicChessCore::closeGame() {
@@ -344,7 +339,7 @@ std::vector<position_t> ClassicChessCore::getLegalMovesForCell(int col, int row)
             if (fig->isPossibleMove(move) || fig->getType() == "pawn" || fig->getType() == "king") {
 
 
-                ValidatorInput input = {possible_move_table_m, board, owner, move, move_history};
+                ValidatorInput input = {&possible_move_table_m, board, owner, move, &move_history};
                 ValidatorOutput output;
                 validator_m.validate(input, output);
 

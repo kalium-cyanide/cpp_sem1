@@ -83,6 +83,7 @@ event_engine::event_engine(sol::state &lua) : fltk_root(nullptr), lua(lua) {
     lua.new_usertype<HtmlWidget>("HtmlWidget",
                                  "set_style", &HtmlWidget::set_style,
                                  "get_style", &HtmlWidget::get_style,
+                                 "set_image", &HtmlWidget::set_image,
                                  "w", &HtmlWidget::w,
                                  "h", &HtmlWidget::h,
                                  "x", &HtmlWidget::x,

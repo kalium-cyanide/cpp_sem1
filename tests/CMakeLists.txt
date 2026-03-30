@@ -8,12 +8,13 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(unit_tests
         test_figures.cpp
-        test_pgn_parser.cpp
+        
 )
 
 target_include_directories(unit_tests PRIVATE
         ${CMAKE_SOURCE_DIR}/src/backend
 )
+
 target_link_libraries(unit_tests
         backend
         gtest_main

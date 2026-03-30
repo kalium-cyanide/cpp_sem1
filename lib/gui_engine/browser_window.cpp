@@ -8,7 +8,6 @@ BrowserWindow::BrowserWindow(int width, int height, std::string_view title) : Fl
     this->end();
 
     HtmlWidget::trigger_layout_update = [this]() {
-        // Вызываем update_layout с текущими размерами
         this->update_layout(this->w(), this->h());
         this->redraw();
     };
@@ -24,8 +23,6 @@ void BrowserWindow::set_styled_root(std::unique_ptr<StyledNode> layout_root) {
     update_layout(1000000, 1000000);
     int max_w = fltk_root_->child(0)->w();
     int max_h = fltk_root_->child(0)->h();
-
-    //size_range(min_w, min_h, max_w, max_h);
 
     update_layout(w(), h());
 

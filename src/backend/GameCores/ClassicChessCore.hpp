@@ -19,10 +19,10 @@ private:
     color_t currentPlayerIndex_m;
     Validator validator_m;
     bool isGameActive_m;
-    possible_moves_table *possible_move_table_m;
+    possible_moves_table possible_move_table_m;
 
     array_t<IFigure *> capturedFigures;
-    array_t<std::tuple<IPlayer *, IFigure *, Move>> *move_history;
+    array_t<std::tuple<IPlayer *, IFigure *, Move>> move_history;
 
     void initializePlayers();
     void initializeBoard();
@@ -46,7 +46,7 @@ private:
 
 public:
     ClassicChessCore();
-    ~ClassicChessCore();
+    ~ClassicChessCore() override;
 
     void startGame() override;
     void closeGame() override;

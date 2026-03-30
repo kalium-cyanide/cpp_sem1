@@ -61,27 +61,27 @@ struct Vector2 {
 /* override */
 
 // floting point
-typedef Vector2<float> vec2f32;
+using vec2f32 = Vector2<float>;
 
-typedef Vector2<double> vec2f64;
+using vec2f64 = Vector2<double>;
 
 // signed
-typedef Vector2<int8_t> vec2i8;
+using vec2i8 = Vector2<int8_t>;
 
-typedef Vector2<int16_t> vec2i16;
+using vec2i16 = Vector2<int16_t>;
 
-typedef Vector2<int32_t> vec2i32;
+using vec2i32 = Vector2<int32_t>;
 
-typedef Vector2<int64_t> vec2i64;
+using vec2i64 = Vector2<int64_t>;
 
 // unsigned
-typedef Vector2<uint8_t> vec2ui8;
+using vec2ui8 = Vector2<uint8_t>;
 
-typedef Vector2<uint16_t> vec2ui16;
+using vec2ui16 = Vector2<uint16_t>;
 
-typedef Vector2<uint32_t> vec2ui32;
+using vec2ui32 = Vector2<uint32_t>;
 
-typedef Vector2<uint64_t> vec2ui64;
+using vec2ui64 = Vector2<uint64_t>;
 
 /* +++ */
 template<typename type>

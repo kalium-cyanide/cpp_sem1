@@ -9,4 +9,6 @@ struct IGameCore {
 
     virtual array_t<IPlayer *> getPlayers() = 0;
     virtual IBoard *getBoard() = 0;
+
+    virtual ~IGameCore() = default;
 };

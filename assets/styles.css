@@ -1,89 +1,38 @@
-#root {
+#app {
     width: 100vw;
     height: 100vh;
     display: flex;
-
     justify-content: center;
     align-items: center;
-    background-color: #333333;
+    background-color: #2b2b2b;
 }
 
-.dragged {
-
+#board-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #1e1e1e;
 }
 
-.board {
-    width: 70vmin;
-    height: 70vmin;
+#board {
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    border: 10px solid #5c4033;
 }
 
 .cell {
-    width: 12.5%;
-    height: 12.5%;
+    width: 75px;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.white {
-    background-color: #f0d9b5;
-}
-
-.black {
-    background-color: #b58863;
 }
 
 .piece {
-    position: absolute;
-    width: 12.5%;
-    height: 12.5%;
-}
-
-
-.check-highlight {
-    background-color: rgba(231, 76, 60, 0.7);
-    border-radius: 50%;
-}
-
-.menu-overlay {
-    width: 300px;
-    height: 400px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.menu-box {
-    width: 300px;
-    height: 400px;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-title {
-    width: 70px;
-    height: 60px;
-    color: #214b7b;
-
-}
-
-.btn {
-    width: 200px;
-    height: 50px;
-    background-color: #cacaca;
-    margin-top: 20px;
-    color: #303030;
-}
-
-.highlight {
-    background-color: #ffffff;
+    width: 65px;
+    height: 65px;
 }

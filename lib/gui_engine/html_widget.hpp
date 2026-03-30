@@ -79,6 +79,8 @@ public:
     std::string tag();
     bool has_class(std::string_view class_name);
 
+    void set_image(std::string path);
+
     void set_style(const std::string &key, std::string value);
     std::string get_style(const std::string &key);
 

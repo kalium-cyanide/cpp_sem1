@@ -7,7 +7,6 @@
 #include "style_engine.hpp"
 #include "xml_parser.hpp"
 
-
 #include "Figures/IFigure.hpp"
 #include "GameCores/ClassicChessCore.hpp"
 #include "Players/GUIPlayer.hpp"
@@ -90,11 +89,12 @@ int get_game_status() {
     return game_core->getGameResult();
 }
 
-// Новая функция для проверки шаха
+
 bool is_king_in_check(int color) {
     if (!game_core) return false;
     return game_core->isKingInCheck(color);
 }
+
 
 void restart_game() {
 
@@ -133,6 +133,23 @@ sol::table get_legal_moves_wrapper(sol::this_state s, int col, int row) {
     return result;
 }
 
+sol::state lua_init() {
+    sol::state lua;
+
+    lua.open_libraries(sol::lib::base, sol::lib::package, sol::lib::string, sol::lib::math, sol::lib::table);
+
+    lua.set_function("get_figure", &get_figure);
+    lua.set_function("make_move", &make_move);
+    lua.set_function("cpp_get_status", &get_game_status);
+    lua.set_function("cpp_restart_game", &restart_game);
+    lua.set_function("cpp_exit_app", &exit_app);
+    lua.set_function("get_legal_moves", &get_legal_moves_wrapper);
+    lua.set_function("cpp_is_king_in_check", &is_king_in_check);
+    lua.set_function("cpp_get_current_player", &is_king_in_check);
+
+    return lua;
+}
+
 void gui_init() {
     float viewport_width = 1000.0f;
     float viewport_height = 600.0f;
@@ -162,23 +179,17 @@ void gui_init() {
 
     auto dom = xml_parser::parse(html_string);
     auto stylesheet = CssParser::parse(css_file);
-    sol::state lua;
-    lua.open_libraries(sol::lib::base, sol::lib::package, sol::lib::string, sol::lib::math, sol::lib::table);
 
-    lua.set_function("get_figure", &get_figure);
-    lua.set_function("make_move", &make_move);
-    lua.set_function("cpp_get_status", &get_game_status);
-    lua.set_function("cpp_restart_game", &restart_game);
-    lua.set_function("cpp_exit_app", &exit_app);
-    lua.set_function("get_legal_moves", &get_legal_moves_wrapper);
-
-    // Регистрация новой функции
-    lua.set_function("cpp_is_king_in_check", &is_king_in_check);
+    auto lua = lua_init();
 
     event_engine events(lua);
+
     auto styled_root = style_engine::apply_styles(dom.get(), stylesheet);
+
     auto layout = layout_engine::calculate_layout(styled_root.get(), viewport_width, viewport_height);
+
     auto *window = new BrowserWindow(int(viewport_width), int(viewport_height), "Chess Game");
+
     window->set_styled_root(std::move(styled_root));
 
     window->on_update = [&lua]() {
